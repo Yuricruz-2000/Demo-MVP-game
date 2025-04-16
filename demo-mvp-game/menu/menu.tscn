@@ -1,0 +1,138 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccn7yosdtgb14"]
+
+[ext_resource type="Script" uid="uid://bejuk377bpaq8" path="res://main_menu_1.gd" id="1_j0t7f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x17od"]
+bg_color = Color(0.0674377, 0.0674377, 0.0674377, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28mq3"]
+bg_color = Color(0.776912, 0.782865, 0.805606, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccgal"]
+bg_color = Color(0.655601, 0.655601, 0.655601, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jnhi"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="FontVariation" id="FontVariation_6qsk2"]
+
+[node name="MainMenu1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0t7f")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1191.0
+offset_bottom = 667.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x17od")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+show_behind_parent = true
+top_level = true
+light_mask = 2
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 396.0
+offset_top = 205.0
+offset_right = 898.0
+offset_bottom = 473.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.14963)
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_28mq3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ccgal")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0jnhi")
+text = "Iniciar jogo"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_28mq3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ccgal")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0jnhi")
+text = "Configurações"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_28mq3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ccgal")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0jnhi")
+text = "Sair"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 6.0
+offset_right = 1257.0
+offset_bottom = 128.0
+theme_override_fonts/font = SubResource("FontVariation_6qsk2")
+theme_override_font_sizes/font_size = 61
+text = "nome do jogo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_inicio_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_BotaoVoltar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_BotaoConfig_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_configuracoes_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_sair_pressed"]

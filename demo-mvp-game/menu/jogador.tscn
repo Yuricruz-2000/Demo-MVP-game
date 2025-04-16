@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwk83lwghe4ym"]
+
+[ext_resource type="Script" uid="uid://w6cfb1tllh5t" path="res://menu/jogador.gd" id="1_827if"]
+[ext_resource type="Texture2D" uid="uid://dyxdt0xkeeg76" path="res://Caue.frente.png" id="2_827if"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y73a2"]
+
+[node name="jogador" type="CharacterBody2D"]
+script = ExtResource("1_827if")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_827if")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y73a2")
